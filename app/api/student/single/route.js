@@ -10,6 +10,7 @@ export const GET = async (req, res) => {
     let result = await PRISMA.users.findFirst({
       where: { id },
     });
+
     PRISMA.$disconnect(); // Close the Prisma client connection
     return NextResponse.json({
       status: "Success",
