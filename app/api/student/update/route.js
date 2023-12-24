@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-
 export const PUT = async (req, res) => {
   try {
     let { searchParams } = new URL(req.url);
