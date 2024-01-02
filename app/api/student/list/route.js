@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
-// import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 export const dynamic = "force-dynamic";
-import PRISMA from "../../../utility/prisma";
 export const GET = async (req, res) => {
   try {
-    // let PRISMA = new PrismaClient();
+    let PRISMA = new PrismaClient();
     let result = await PRISMA.users.findMany();
-    // PRISMA.$disconnect(); // Close the Prisma client connection
+    PRISMA.$disconnect(); // Close the Prisma client connection
     // return NextResponse.json({
     //   status: "Success",
     //   data: result,
