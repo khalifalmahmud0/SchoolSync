@@ -5,7 +5,7 @@ export const GET = async (req, res) => {
   try {
     let PRISMA = new PrismaClient();
     let result = await PRISMA.users.findMany();
-    PRISMA.$disconnect(); // Close the Prisma client connection
+    // PRISMA.$disconnect(); // Close the Prisma client connection
     // return NextResponse.json({
     //   status: "Success",
     //   data: result,
