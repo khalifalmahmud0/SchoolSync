@@ -6,10 +6,23 @@ export const GET = async (req, res) => {
     let PRISMA = new PrismaClient();
     let result = await PRISMA.users.findMany();
     PRISMA.$disconnect(); // Close the Prisma client connection
-    return NextResponse.json({
-      status: "Success",
-      data: result,
-    });
+    // return NextResponse.json({
+    //   status: "Success",
+    //   data: result,
+    // });
+    return NextResponse.json(
+      {
+        status: "Success",
+        data: result,
+      },
+      {
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+        },
+      }
+    );
   } catch (error) {
     // Handle errors
     console.error("Error:", error);
