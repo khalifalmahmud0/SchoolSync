@@ -42,7 +42,7 @@ Endpoint to fetch data for all registered students.
 
 - ### courses
 
-- ## Documentation:
+## Documentation:
 
 For detailed usage instructions and API endpoints, refer to the [Postman API Documentation](https://documenter.getpostman.com/view/28312754/2s9Ykt3dTd).
 
